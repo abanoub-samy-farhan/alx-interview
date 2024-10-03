@@ -1,7 +1,8 @@
+#!/usr/bin/python3
 def pascal_triangle(n):
-    if not n:
-        return []
     pascal = []
+    if n <= 0:
+        return pascal
     for i in range(n):
         pre = []
         for j in range(i + 1):
