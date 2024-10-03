@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+pascal's triangle
+"""
+
 def pascal_triangle(n):
     """This is a function for making pascal's triangle in a form of lists
     Args:
