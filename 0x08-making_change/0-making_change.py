@@ -1,32 +1,15 @@
 #!/usr/bin/python3
-"""
-Function for calculating the number of coins using dynamic programming
-""" 
+""" Change comes from within """
+
 
 def makeChange(coins, total):
-    """Making a change the for the numbers"""
-    memo = {}
-
-    def dp(total):
-        if total < 0:
-            return -1
-        if total == 0:
-            return 0
-        
-        if total in memo:
-            return memo[total]
-
-        ans = -1
-        for coin in coins:
-            tmp = dp(total - coin)
-            if tmp != -1:
-                tmp += 1
-                if ans == -1:
-                    ans = tmp
-                else:
-                    ans = min(ans, tmp)
-
-        memo[total] = ans
-        return ans
-
-    return dp(total)
+	""" return the fewest number of coins needed to meet givern amount """
+	if total <= 0:
+		return 0
+	dp = [total + 1] * (total + 1)
+	dp[0] = 0
+	for i in range(1, total + 1):
+		for coin in coins:
+			if i - coin >= 0:
+				dp[i] = min(dp[i], 1 + dp[i - coin])
+	return dp[-1] if dp[-1] != total + 1 else -1
