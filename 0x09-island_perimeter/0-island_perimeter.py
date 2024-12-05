@@ -3,6 +3,7 @@
 Island Perimeter calculator in a grid
 """
 
+
 def island_perimeter(grid):
     """
     Function that returns the perimeter of an island in a grid
@@ -17,4 +18,3 @@ def island_perimeter(grid):
                 if j > 0 and grid[i][j - 1] == 1:
                     perimeter -= 2
     return perimeter
-    
