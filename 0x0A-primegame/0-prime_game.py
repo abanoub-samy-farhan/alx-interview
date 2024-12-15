@@ -1,8 +1,11 @@
 #!/usr/bin/python3
-# Coding some of the prime game logic here
+"""
+This is a documentation for the model
+"""
 
 
 def isWinner(x, nums):
+    """Function to fidn out the winner of most of the games"""
     maximumNum = max(nums)
     sieve = [True for _ in range(maximumNum + 1)]
     prefix_sum = [0 for _ in range(maximumNum + 1)]
@@ -19,7 +22,7 @@ def isWinner(x, nums):
 
     Maria = 0
     Ben = 0
-    for index in range(len(nums)):
+    for index in range(x):
         if prefix_sum[nums[index]] % 2 == 0:
             Ben += 1
         else:
