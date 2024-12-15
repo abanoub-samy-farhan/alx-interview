@@ -16,7 +16,7 @@ def isWinner(x, nums):
                 sieve[j] = False
                 j += number
         prefix_sum[number] += prefix_sum[number - 1]
-    
+
     Maria = 0
     Ben = 0
     for index in range(len(nums)):
@@ -31,5 +31,3 @@ def isWinner(x, nums):
         return "Maria"
     else:
         return None
-
-
