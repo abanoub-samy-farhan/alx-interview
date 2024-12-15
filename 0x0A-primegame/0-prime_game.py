@@ -6,6 +6,8 @@ This is a documentation for the model
 
 def isWinner(x, nums):
     """Function to fidn out the winner of most of the games"""
+    if x == 0:
+        return None
     maximumNum = max(nums)
     sieve = [True for _ in range(maximumNum + 1)]
     prefix_sum = [0 for _ in range(maximumNum + 1)]
